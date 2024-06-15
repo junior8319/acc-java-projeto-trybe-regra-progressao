@@ -30,5 +30,11 @@ public class App {
       evaluationsList.add(activity);
     }
     scanner.close();
+
+    Evaluation evaluation = new Evaluation();
+    boolean isValidWeightSum = evaluation.verifyEvaluationWeights(evaluationsList);
+    if (!isValidWeightSum) {
+      System.out.println("A soma dos pesos é diferente de 100!");
+    }
   }
 }
